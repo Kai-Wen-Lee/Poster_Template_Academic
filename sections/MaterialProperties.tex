@@ -1,0 +1,51 @@
+\begin{columns}
+	\begin{column}{0.5\textwidth}
+		\begin{tikzpicture}
+			\node (WML) at (0,0) {\includegraphics[width=\textwidth]{figs/WML_profile.pdf}};
+			\node [rectangle, fill=none, align=center, xshift=0.05\textwidth, yshift=0.05\textwidth] (Title) at (WML.north) {\footnotesize Profiles of Temperature-dependent \\ \footnotesize Material Properties};
+		\end{tikzpicture}
+	\end{column}
+	\begin{column}{0.5\textwidth}
+    \begin{table}
+	\begin{tabular}{l c c}
+	\rowcolor{cb3}
+		\small Fixed Points & \small Material & \small $Pr$ \\
+	\hline 
+	\rowcolor{white}
+		\small ${T}=-0.5$ & \small Water & \small $2.5$\\
+	\rowcolor{cb1}
+		\small ${T} =0.0$ & \small  - & \small $1.0$\\
+	\rowcolor{white}
+		\small ${T}=0.5$ & \small Liquid metal & \small $0.025$\\
+	\hline
+	\end{tabular}
+    \end{table}
+	\end{column}
+\end{columns}
+
+    \begin{table}
+	\begin{tabular}{c c c c}
+	\rowcolor{cb3}
+	Case & $\kappa$ & $\nu$ \\
+	\hline 
+	\rowcolor{white} 
+		\texttt{C1} & \scriptsize $ \frac {39}{64} \exp \left(4 \space \atanh \left(\frac{32}{33}\right) T \right) + \frac{25}{64}$ & \scriptsize 1 \\
+	\rowcolor{cb1}
+		\texttt{C2} & 
+		\tiny $ \begin{aligned}
+			&\exp{\left(-2\ln{\left( \frac{1}{10} \left( 1001 - \sqrt{1001901} \right) \right)} \right) {T}} \\
+			&+ \left( \frac{999}{5}-\frac{\sqrt{1001901}}{5} \right) {T}
+		\end{aligned}
+		$
+		& \scriptsize $  \frac{\exp{\left(-2\ln{\left( \frac{1}{10} \left( 1001 - \sqrt{1001901} \right) \right)} \right) {T}} + \left( \frac{999}{5}-\frac{\sqrt{1001901}}{5} \right) {T}
+}{\frac{39}{64} \exp \left(4 \space \atanh \left(\frac{32}{33} \right) T \right) + \frac{25}{64}}$ \\
+	\rowcolor{white}
+
+		\texttt{C3}& \tiny $\begin{aligned}
+			&\exp{\left(-2\ln{\left( 101-10\sqrt{102}\right)} {T} \right)} 
+			&+ \left( 198 - 20 \sqrt{102} \right) {T}
+		\end{aligned}$ & \scriptsize $\frac{\exp{\left(-2\ln{\left( 101-10\sqrt{102}\right)} {T} \right)} + \left( 198 - 20 \sqrt{102} \right) {T}}{\frac{39}{64} \exp \left(4 \space \atanh \left(\frac{32}{33} \right) T \right) + \frac{25}{64}}$ \\
+
+	\hline
+	\end{tabular}
+    \end{table}

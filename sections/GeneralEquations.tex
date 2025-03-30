@@ -1,0 +1,37 @@
+\begin{outline}
+%ref
+	\1 DNS code: $4^{th}$ order accurate finite volume method solver, \texttt{goldfish} \cite{Shishkina2005}
+	\1 Governing equations \cite{Panton2013}:
+$$
+\begin{aligned}
+	\mathbf{\nabla} \cdot \mathbf{u} &= 0 \\
+	{D}_t \mathbf{u} &=
+	-\mathbf{\nabla}{p} + \Gamma^{-\frac{3}{2}}
+	{Pr}^{-\frac{1}{2}} {Ra}^{\frac{1}{2}} {\mathbf{\nabla}}
+	\cdot \left[ \nu \left( {\mathbf{\nabla}}
+	{\mathbf{u}} + \left( {\mathbf{\nabla}}
+	{\mathbf{u}} \right)^\mathbf{T} \right) \right] \\ 
+        & + {T} \hat{z} + {Ro}^{-1} \Gamma^{\frac{1}{2}}
+	{\mathbf{u}} \times \hat{z} \\
+	{{D}_t} {{T}} &= \Gamma^{\frac{3}{2}} {Ra}^{-\frac{1}{2}}
+	{Pr}^{\frac{1}{2}} {\mathbf{\nabla}} \cdot \left[ \kappa
+	{\mathbf{\nabla}} {{T}} \right]
+\end{aligned}
+$$
+\1 where
+$$
+	{Ra} = \frac{g \alpha \Delta {H}^3}{\kappa \nu} \space, \quad
+	{Pr} = \frac{\nu}{\kappa} \space, \quad
+	{Ro} = \sqrt{\frac{\alpha g {H} \Delta}{2 \Omega {H}}} \space,
+$$
+$$
+        \Gamma = \frac{{R}}{{H}} \space, \quad
+        {Ek} = \sqrt{\frac{{Ro}^2 {Pr}}{{Ra}}} = \frac{\nu}{2 \Omega {H}^2}
+$$
+\end{outline}
+
+\begin{outline}
+    \1 Boundary conditions: 
+    \2 Top \& bottom plate: No-slip, isothermal
+    \2 Sidewall: Free-slip, adiabatic
+\end{outline}
