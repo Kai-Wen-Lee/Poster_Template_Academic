@@ -1,0 +1,118 @@
+\documentclass[mathserif]{beamer}
+\usepackage[orientation=portrait, size=a0, scale=1.4]{beamerposter}
+\usetheme{MinimalistPoster}
+
+% ----- DEFINE FONT & RELATED -----
+\usepackage{anyfontsize}
+\usepackage{ragged2e}
+
+% ----- DEFINE MATHS & RELATED -----
+\usepackage[euler-digits]{eulervm}
+\DeclareMathOperator\atanh{atanh}
+
+% ----- DEFINE TABLES & RELATED -----
+\usepackage{tabularx}
+
+% ----- DEFINE GRAPHICS -----
+\usepackage{graphicx,mwe}
+\usepackage{tikz}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+\usetikzlibrary{shapes}
+\usetikzlibrary{positioning}
+\usepackage{pgfplots}
+%\usepackage{subcaption}
+
+% ----- DEFINE COLORS -----
+\usepackage{xcolor,colortbl}
+\RequirePackage{LightPalette}
+
+% ----- DEFINE REF ----- %
+\usepackage[backend=bibtex, style=numeric, sorting=none, maxcitenames=1,
+    maxbibnames=1,locallabelwidth]{biblatex}
+
+\renewcommand{\bibfont}{\tiny}
+\AtEveryBibitem{\clearfield{issn}}
+\AtEveryCitekey{\clearfield{issn}}
+\AtEveryBibitem{\clearfield{doi}}
+\AtEveryCitekey{\clearfield{doi}}
+\AtEveryBibitem{\clearfield{journal}}
+\AtEveryCitekey{\clearfield{journal}}
+\AtEveryBibitem{\clearfield{volume}}
+\AtEveryCitekey{\clearfield{volume}}
+\AtEveryBibitem{\clearfield{number}}
+\AtEveryCitekey{\clearfield{number}}
+\AtEveryBibitem{\clearfield{pages}}
+\AtEveryCitekey{\clearfield{pages}}
+\AtEveryBibitem{\clearfield{note}}
+\AtEveryCitekey{\clearfield{note}}
+\AtEveryBibitem{\clearfield{url}}
+\AtEveryCitekey{\clearfield{url}}
+\AtEveryBibitem{\clearfield{publisher}}
+\AtEveryCitekey{\clearfield{publisher}}
+\bibliography{NOBRefs}
+
+% ----- OTHER PACKAGES -----
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{outlines}
+\usepackage[absolute,overlay]{textpos}
+
+
+% ----- CUSTOM FUNCTIONS -----
+
+% ----- TITLE ----- %
+\title{Effects of Temperature Dependent Molecular Diffusivities on Heat and Momentum Transport in Rapidly Rotating Rayleigh-B\'enard Convection}
+\author{Kai Wen Lee, Susanne Horn}
+\institute{Centre for Fluids and Complex Systems, Coventry University}
+
+% ----- LOGO ----- %
+%\logo{\includegraphics[height=7.5cm]{logo/cov_phoenix_right.pdf}}
+
+% ----- DOCUMENT START ----- %
+\begin{document}
+\begin{frame}[t]{}
+	\begin{columns}[T]
+        % Left column
+        \begin{column}{0.367\textwidth}
+            \begin{block}{Motivation}
+	    \justifying
+	    \input{sections/Motivation.tex}
+            \end{block}
+            
+            \begin{block}{Governing Equations}
+	    \justifying
+	    \input{sections/GeneralEquations.tex}
+            \end{block}
+
+            \begin{block}{Material Properties}
+	    \justifying
+		    \input{sections/MaterialProperties.tex}
+            \end{block}
+
+	    \begin{block}{References}
+	    \begingroup
+		    \setlength{\parindent}{0pt} % Remove indent
+		    \setlength{\parskip}{0pt}   % Remove extra spacing
+		    \printbibliography[heading=none]
+	    \endgroup
+	    \end{block}
+        \end{column}
+
+        % Right column
+        \begin{column}{0.633\textwidth}
+
+            \begin{block}{Convection Onset Predictions}
+	    \justifying
+		    \input{sections/ConvectionOnset.tex}
+            \end{block}
+
+            \begin{block}{Results}
+	    \justifying
+		    \input{sections/Results.tex}
+            \end{block}
+
+        \end{column}
+    \end{columns}
+\end{frame}
+\end{document}

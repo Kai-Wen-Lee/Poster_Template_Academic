@@ -1,0 +1,125 @@
+\ProvidesPackage{beamerthemeMinimalistPoster}
+
+\RequirePackage{tikz}
+\RequirePackage{graphicx}
+\RequirePackage{LightPalette}
+\selectcolormodel{RGB}
+
+% Set theme options
+\mode<presentation>
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----- Set global font size ----- %
+\setbeamerfont{title in headline}{size=\fontsize{65}{55}\selectfont}
+\setbeamerfont{author in headline}{size=\fontsize{46}{56}\selectfont}
+\setbeamerfont{institute in headline}{size=\fontsize{36}{46}\selectfont}
+\setbeamerfont{block title}{size=\fontsize{46}{45}\selectfont}
+\setbeamerfont{block body}{size=\fontsize{36}{40}\selectfont}
+\setbeamerfont{caption}{size=\fontsize{18}{22}\selectfont}
+
+% ----- Set itemize bullets ----- %
+\setbeamercolor{itemize item}{fg=cg5}
+\setbeamercolor{itemize subitem}{fg=cg5}
+\setbeamercolor{itemize subsubitem}{fg=cg5}
+
+\setbeamertemplate{itemize item}[square]
+\setbeamertemplate{itemize subitem}[circle]
+\setbeamertemplate{itemize subsubitem}[triangle]
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----- Set colors ----- %
+% For fonts %
+\setbeamercolor{title in headline}{fg=black}
+\setbeamercolor{author in headline}{fg=black}
+\setbeamercolor{institute in headline}{fg=black}
+\setbeamercolor*{normal text}{fg=black, bg=white}
+
+% For title %
+\setbeamercolor{headline}{bg=OffWhiteGrey}
+
+% For blocks %
+\setbeamercolor*{block title}{fg=black, bg=bp1}
+\setbeamercolor*{block body}{fg=black, bg=OffWhiteGrey}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----- TITLE THEME ----- %
+\setbeamertemplate{headline}{
+	\leavevmode
+
+	% Creates a colored box spanning the entire width of the poster
+	% headline uses the colour defined for the headline block in beamer
+	\begin{beamercolorbox}[wd=0.764\paperwidth]{headline}
+		% Organise the content into columns
+		% T aligns columns at the top
+		\begin{columns}[T]
+			\begin{column}{0.02\paperwidth}
+				%whitespace 
+			\end{column}
+
+
+			% Middle column for author title and institution
+			% raggedleft alights text to the right
+			\begin{column}{0.75\paperwidth}
+				\vskip4ex
+				\raggedright
+				%Uses Beamer's color settings for title in headline
+				%\color{fg} uses foreground colour
+				%\textbf{\LARGE{\inserttitle}}: Displays the title in bold, large font
+				{\usebeamerfont{title in headline} \usebeamercolor{title in headline} \color{fg} \textbf{\inserttitle}\\[1ex]}
+				{\usebeamerfont{author in headline} \usebeamercolor{author in headline} \color{fg} \insertauthor\\}
+				{\usebeamerfont{institute in headline} \usebeamercolor{institute in headline} \color{fg} \insertinstitute\\}
+				\par
+			\end{column}
+			% Column 1 (for logo or white space)
+			\begin{column}{0.105\paperwidth}
+				\begin{center}
+					\includegraphics[width=1.\linewidth]{logo/cov_phoenix.pdf}
+				\end{center}
+			\end{column}
+			% Column 2 (for second logo)
+			% vskip1ex adds vertical spacing
+			\begin{column}{0.105\paperwidth}
+				\begin{center}
+					\includegraphics[width=0.85\linewidth]{logo/FCS_blue.pdf}
+				\end{center}
+			\end{column}
+
+			\begin{column}{0.02\paperwidth}
+				%whitespace
+			\end{column}
+		\end{columns}
+		\vskip2.ex
+	\end{beamercolorbox}
+
+
+	% Adding a seperation line below the headline
+	\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+		\centering
+		\rule{0.975\linewidth}{1pt}
+		\par
+		\vskip0.5ex
+	\end{beamercolorbox}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ----- Block theme ----- %
+\setbeamertemplate{block begin}{
+	% Block title parameters
+    \begin{beamercolorbox}[colsep=0.75ex, wd=0.764\linewidth]{block title}
+	    \usebeamerfont*{block title}\textbf{\insertblocktitle}\\[0.125ex] % Small vertical space
+    \end{beamercolorbox}
+    {\ifbeamercolorempty[bg]{block title}{}{\nointerlineskip\vskip-.25pt}}
+    \vskip.25ex
+    \rule{\linewidth}{1pt} % Horizontal line separator
+    \usebeamerfont{block body}%
+    \begin{beamercolorbox}[colsep=0.5ex, sep=.75ex,vmode]{block body}%
+	    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+    }
+
+\setbeamertemplate{block end}{
+    \end{beamercolorbox}
+    \vskip1.ex
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
